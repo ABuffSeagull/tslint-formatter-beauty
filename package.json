@@ -1,0 +1,35 @@
+{
+  "name": "tslint-formatter-beauty",
+  "version": "0.1.0",
+  "description": "Beautiful TSLint formatter.",
+  "main": "beautyFormatter.js",
+  "author": "Pig Fang <g-plane@hotmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/g-plane/tslint-formatter-beauty"
+  },
+  "license": "Apache-2.0",
+  "private": false,
+  "scripts": {
+    "lint": "tslint -p .",
+    "build": "tsc -p .",
+    "dev": "tsc -p . -w",
+    "test": "yarn lint && yarn build && node test.js",
+    "prepublish": "yarn build"
+  },
+  "devDependencies": {
+    "@types/ansi-styles": "^2.0.30",
+    "@types/log-symbols": "^2.0.0",
+    "@types/node": "^9.6.5",
+    "tslint": "^5.9.1",
+    "tslint-config-gplane": "^2.1.0",
+    "typescript": "^2.8.1"
+  },
+  "dependencies": {
+    "@babel/highlight": "^7.0.0-beta.44",
+    "ansi-styles": "^3.2.1",
+    "chalk": "^2.3.2",
+    "code-excerpt": "^2.1.1",
+    "log-symbols": "^2.2.0"
+  }
+}
