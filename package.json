@@ -1,6 +1,6 @@
 {
   "name": "tslint-formatter-beauty",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Beautiful TSLint formatter.",
   "main": "beautyFormatter.js",
   "author": "Pig Fang <g-plane@hotmail.com>",
