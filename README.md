@@ -1,6 +1,6 @@
 # tslint-formatter-beauty
 
-Beautiful TSLint custom formatter.
+Beautiful TSLint formatter.
 
 ![](screenshot.png)
 
@@ -67,6 +67,10 @@ module.exports = {
   }
 }
 ```
+
+## Related Projects
+
+- [eslint-formatter-beauty](https://github.com/g-plane/eslint-formatter-beauty)
 
 ## License
 
