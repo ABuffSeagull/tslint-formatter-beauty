@@ -92,7 +92,7 @@ assert(!noSummaryOutput.includes(
   logSymbols.error + chalk.red('  1 error')
 ))
 assert(!noSummaryOutput.includes(
-  logSymbols.warning + chalk.yellow('  1 warning'))
-)
+  logSymbols.warning + chalk.yellow('  1 warning')
+))
 
 console.log(chalk.green('All tests passed.'))
