@@ -17,6 +17,7 @@
     "tslint",
     "tslint-formatter"
   ],
+  "typings": "beautyFormatter.d.ts",
   "scripts": {
     "lint": "tslint -p .",
     "build": "tsc -p .",

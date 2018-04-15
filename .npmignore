@@ -1,7 +1,8 @@
 .editorconfig
 .travis.yml
 *.ts
-shims.d.ts
+*.d.ts
+!beautyFormatter.d.ts
 test.js
 tsconfig.json
 tslint.json
