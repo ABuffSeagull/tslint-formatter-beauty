@@ -4,7 +4,6 @@ import * as style from 'ansi-styles'
 import * as logSymbols from 'log-symbols'
 import highlight from '@babel/highlight'
 
-/* tslint:disable no-require-imports */
 import codeExcerpt = require('code-excerpt')
 
 const chalk = Chalk.default
