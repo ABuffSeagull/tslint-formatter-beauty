@@ -27,12 +27,7 @@ function createFailure (
   return failure
 }
 
-const formatter = new Formatter()
-
-// Success example
-assert.strictEqual(formatter.format([]), '')
-
-const output = formatter.format([
+const fixture = [
   createFailure(
     'src/index.ts',
     'var a = 0;\n\n\n\n\n\n\n\n[].forEach(function () {\n  //\n})\n',
@@ -51,7 +46,14 @@ const output = formatter.format([
     'warning-rule',
     'warning'
   ),
-])
+]
+
+const formatter = new Formatter()
+
+// Success example
+assert.strictEqual(formatter.format([]), '')
+
+const output = formatter.format(fixture)
 
 // File name
 assert(output.includes(chalk.underline('src/index.ts')))
@@ -85,5 +87,12 @@ assert(output.includes(chalk.gray('   11 | ')))
 // Summary
 assert(output.includes(logSymbols.error + chalk.red('  1 error')))
 assert(output.includes(logSymbols.warning + chalk.yellow('  1 warning')))
+const noSummaryOutput = formatter.format(fixture, { noSummary: true })
+assert(!noSummaryOutput.includes(
+  logSymbols.error + chalk.red('  1 error')
+))
+assert(!noSummaryOutput.includes(
+  logSymbols.warning + chalk.yellow('  1 warning'))
+)
 
 console.log(chalk.green('All tests passed.'))

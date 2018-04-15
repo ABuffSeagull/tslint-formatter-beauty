@@ -30,8 +30,12 @@ function sort (a: tslint.RuleFailure, b: tslint.RuleFailure) {
   }
 }
 
+export interface Options {
+  noSummary?: boolean
+}
+
 export class Formatter extends tslint.Formatters.AbstractFormatter {
-  format (failures: tslint.RuleFailure[]): string {
+  format (failures: tslint.RuleFailure[], options?: Options): string {
     let output = '\n'
 
     const results: { [filename: string]: tslint.RuleFailure[] } = {}
@@ -137,6 +141,14 @@ export class Formatter extends tslint.Formatters.AbstractFormatter {
       .filter(failure => failure.getRuleSeverity() === 'warning')
       .length
 
+    if (errorsCount === 0 && warningsCount === 0) {
+      return ''   // Without errors and warnings, be silent
+    }
+
+    if (options && options.noSummary) {
+      return output
+    }
+
     if (errorsCount > 0) {
       output += logSymbols.error
         + chalk.red(`  ${errorsCount} error${errorsCount === 1 ? '' : 's'}`)
@@ -150,10 +162,6 @@ export class Formatter extends tslint.Formatters.AbstractFormatter {
         + chalk.yellow(
           `  ${warningsCount} warning${warningsCount === 1 ? '' : 's'}`
         )
-    }
-
-    if (errorsCount === 0 && warningsCount === 0) {
-      return ''   // Without errors and warnings, be silent
     }
 
     output += '\n'
