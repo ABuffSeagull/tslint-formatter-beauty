@@ -1,0 +1,6 @@
+tests/
+*.ts
+*.d.ts
+!beautyFormatter.d.ts
+tsconfig.json
+screenshot.png
