@@ -6,7 +6,7 @@
   "author": "Pig Fang <g-plane@hotmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/g-plane/tslint-formatter-beauty"
+    "url": "https://github.com/g-plane/methane"
   },
   "license": "Apache-2.0",
   "private": false,
@@ -19,19 +19,12 @@
   ],
   "typings": "beautyFormatter.d.ts",
   "scripts": {
-    "lint": "tslint -p .",
     "build": "tsc -p .",
-    "dev": "tsc -p . -w",
-    "test": "yarn lint && yarn build && node test.js",
-    "prepublish": "yarn build"
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
     "@types/ansi-styles": "^2.0.30",
-    "@types/log-symbols": "^2.0.0",
-    "@types/node": "^9.6.5",
-    "tslint": "^5.9.1",
-    "tslint-config-gplane": "^2.2.0",
-    "typescript": "^2.8.1"
+    "@types/log-symbols": "^2.0.0"
   },
   "dependencies": {
     "@babel/highlight": "^7.0.0-beta.44",

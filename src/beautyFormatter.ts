@@ -1,12 +1,10 @@
 import * as tslint from 'tslint'
-import * as Chalk from 'chalk'
+import chalk from 'chalk'
 import * as style from 'ansi-styles'
 import * as logSymbols from 'log-symbols'
 import highlight from '@babel/highlight'
 
 import codeExcerpt = require('code-excerpt')
-
-const chalk = Chalk.default
 
 function padStart (text: string, length: number) {
   return text.length >= length
@@ -28,6 +26,8 @@ function sort (a: tslint.RuleFailure, b: tslint.RuleFailure) {
     > b.getStartPosition().getPosition()) {
     return 1
   }
+
+  return 0
 }
 
 export interface Options {
