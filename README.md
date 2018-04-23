@@ -68,7 +68,7 @@ module.exports = {
 
 ## Related Projects
 
-- [eslint-formatter-beauty](https://github.com/g-plane/eslint-formatter-beauty)
+- [eslint-formatter-beauty](https://github.com/g-plane/methane/tree/master/packages/eslint-formatter-beauty)
 
 ## License
 
