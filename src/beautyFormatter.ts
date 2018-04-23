@@ -3,7 +3,6 @@ import chalk from 'chalk'
 import * as style from 'ansi-styles'
 import * as logSymbols from 'log-symbols'
 import highlight from '@babel/highlight'
-
 import codeExcerpt = require('code-excerpt')
 
 function padStart (text: string, length: number) {
