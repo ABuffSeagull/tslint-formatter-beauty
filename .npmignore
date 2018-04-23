@@ -4,3 +4,4 @@ tests/
 !beautyFormatter.d.ts
 tsconfig.json
 screenshot.png
+types.js
