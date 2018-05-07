@@ -5,13 +5,13 @@ import * as logSymbols from 'log-symbols'
 import highlight from '@babel/highlight'
 import codeExcerpt = require('code-excerpt')
 
-function padStart (text: string, length: number) {
+function padStart(text: string, length: number) {
   return text.length >= length
     ? text
     : `${' '.repeat(length - text.length)}${text}`
 }
 
-function sort (a: tslint.RuleFailure, b: tslint.RuleFailure) {
+function sort(a: tslint.RuleFailure, b: tslint.RuleFailure) {
   if (a.getRuleSeverity() === 'error' && b.getRuleSeverity() === 'warning') {
     return -1
   }
@@ -34,7 +34,7 @@ export interface Options {
 }
 
 export class Formatter extends tslint.Formatters.AbstractFormatter {
-  format (failures: tslint.RuleFailure[], options?: Options): string {
+  format(failures: tslint.RuleFailure[], options?: Options): string {
     let output = '\n'
 
     const results: { [filename: string]: tslint.RuleFailure[] } = {}

@@ -5,7 +5,7 @@ import * as style from 'ansi-styles'
 import * as logSymbols from 'log-symbols'
 import { Formatter } from '../src/beautyFormatter'
 
-function createFailure (
+function createFailure(
   fileName: string,
   code: string,
   start: number,
