@@ -6,7 +6,7 @@
   "author": "Pig Fang <g-plane@hotmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/g-plane/methane"
+    "url": "https://github.com/g-plane/tslint-formatter-beauty"
   },
   "license": "MIT",
   "private": false,
@@ -17,14 +17,39 @@
     "tslint",
     "tslint-formatter"
   ],
-  "typings": "beautyFormatter.d.ts",
   "scripts": {
     "build": "tsc -p .",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "test": "jest",
+    "lint": "tslint -p . --formatters-dir . -t beauty -p ."
+  },
+  "files": [
+    "beautyFormatter.js"
+  ],
+  "jest": {
+    "setupTestFrameworkScriptFile": "jest-extended",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json",
+      "node"
+    ]
   },
   "devDependencies": {
     "@types/ansi-styles": "^2.0.30",
-    "@types/log-symbols": "^2.0.0"
+    "@types/jest": "^23.3.1",
+    "@types/log-symbols": "^2.0.0",
+    "@types/node": "^10.9.4",
+    "jest": "^23.5.0",
+    "jest-extended": "^0.8.1",
+    "ts-jest": "^23.1.4",
+    "tslint": "^5.11.0",
+    "tslint-config-gplane": "^3.0.0",
+    "typescript": "^3.0.3"
   },
   "dependencies": {
     "@babel/highlight": "^7.0.0-beta.44",

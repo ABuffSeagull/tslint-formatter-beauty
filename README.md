@@ -4,8 +4,8 @@ Beautiful TSLint formatter.
 
 ![](screenshot.png)
 
-![npm](https://img.shields.io/npm/v/tslint-formatter-beauty.svg?style=flat-square)
-![npm](https://img.shields.io/npm/dm/tslint-formatter-beauty.svg?style=flat-square)
+![build](https://flat.badgen.net/travis/g-plane/tslint-formatter-beauty)
+![npm](https://flat.badgen.net/npm/v/tslint-formatter-beauty)
 
 ## Installation
 
@@ -68,10 +68,10 @@ module.exports = {
 
 ## Related Projects
 
-- [eslint-formatter-beauty](https://github.com/g-plane/methane/tree/master/packages/eslint-formatter-beauty)
+- [eslint-formatter-beauty](https://github.com/g-plane/eslint-formatter-beauty)
 
 ## License
 
-Apache License 2.0
+MIT License
 
 Copyright (c) 2018-present Pig Fang
