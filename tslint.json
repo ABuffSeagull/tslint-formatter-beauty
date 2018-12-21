@@ -1,3 +1,6 @@
 {
-  "extends": "tslint-config-gplane"
+  "extends": "tslint:recommended",
+  "rules": {
+  	"arrow-parens": [true, "ban-single-arg-parens"]
+	}
 }
