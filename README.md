@@ -1,24 +1,20 @@
-# tslint-formatter-beauty
+# tslint-formatter-kakoune
 
-Beautiful TSLint formatter.
+[TSLint](https://palantir.github.io/tslint/)
+formatter that follows
+[kakoune](https://github.com/mawww/kakoune/blob/master/rc/base/lint.kak)
+format:
 
-![](screenshot.png)
-
-![build](https://flat.badgen.net/travis/g-plane/tslint-formatter-beauty)
-![npm](https://flat.badgen.net/npm/v/tslint-formatter-beauty)
+```
+{filename}:{line}:{column}: {kind}: {message}
+```
 
 ## Installation
-
-Using Yarn:
-
-```
-yarn add --dev tslint-formatter-beauty
-```
 
 Using npm:
 
 ```
-npm install --save-dev tslint-formatter-beauty
+npm install --save-dev tslint-formatter-kakoune
 ```
 
 ## Usage
@@ -26,52 +22,15 @@ npm install --save-dev tslint-formatter-beauty
 ### TSLint CLI:
 
 ```
-tslint --formatters-dir ./node_modules/tslint-formatter-beauty -t beauty -p .
+tslint --formatters-dir ./node_modules/tslint-formatter-kakoune -t kakoune -p .
 ```
 
-### gulp-tslint
-
-```js
-const gulp = require('gulp')
-const tslint = require('gulp-tslint')
-
-gulp.task('lint', () =>
-  gulp.src('file.ts')
-    .pipe(tslint({
-      formattersDirectory: 'node_modules/tslint-formatter-beauty',
-      formatter: 'beauty'
-    }))
-)
+In your `kakrc`:
 ```
-
-### tslint-loader
-
-```js
-module.exports = {
-  // ... other options
-  module: {
-    rules: [
-      // ... other options
-      {
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        loader: 'tslint-loader',
-        options: {
-          formattersDirectory: 'node_modules/tslint-formatter-beauty',
-          formatter: 'beauty'
-        }
-      }
-    ]
-  }
+hook global WinSetOption filetype=typescript %{
+  set buffer lintcmd 'tslint --config tslint.json --formatters-dir ./node_modules/tslint-formatter-kakoune -t kakoune'
+  lint-enable
+  lint
 }
 ```
-
-## Related Projects
-
-- [eslint-formatter-beauty](https://github.com/g-plane/eslint-formatter-beauty)
-
-## License
-
-MIT License
-
-Copyright (c) 2018-present Pig Fang
+You may add more hooks to trigger the lint command on save.
